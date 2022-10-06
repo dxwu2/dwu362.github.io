@@ -10,12 +10,33 @@ Team: Vanessa Yip (kyip31), Kevin Wu (kwu333), Yi-Ting Chiang (ychiang48), Danie
 # CS 7641 Machine Learning Group Project
 
 ## Introduction/Background
+Music has been a huge part of our daily lives. In 2021, the music industry market generates $61.82 billion, and has grown 36% since 2012. Therefore, predicting a song’s popularity is crucial to keep business competitive in the market. 
 
 ## Problem Definition
+If Rihanna returns from hiatus and decides to release a new album after eight years, how likely are her songs going to trend on streaming platforms? Was anyone able to foresee Olivia Rodrigo’s success with her debut album? Combination of music components, including genre, artist attributes, song characteristics all contribute towards the success of a song, and machine learning algorithm could serve as an extremely useful method for producers and companies to predict the successes of their songs.  
+
+Our team aims to construct a model that determines whether a newly released song will be included in Spotify’s Top 200 chart. Ultimately, we believe that this model could help drive music production processes and set up a song for success even before it is released. 
 
 ## Methods
+We will start by performing Principal Component Analysis (PCA) to reduce the dimensionality of dataset and extract the most relevant features that maximize variance in the data. Depending on how much of the available Spotify data we deem as relevant, we will also perform incremental K-Nearest Neighbors and the Gaussian Normal Basis.  
+
+We will also utilize support vector machines, as they have been one of the most ubiquitous classifiers for music classification. As SVMs are a binary classifier, we will utilize a radial basis function (RBF) kernel to enlarge the feature space.  
 
 ## Potential Results and Discussion
+There will definitely be some quantitative measurement of accuracy that will be used in our metrics. We have a few options: 
+
+One is simply the accuracy score. We want to measure how accurate we are in predicting whether a list of songs ends up in the top 200 trending or not. 
+
+Another viable option that might produce smoother results would be using R^2 score. Instead of just a binary label, we can attribute song’s with an actual ranking from 1-200 or even to beyond 200. This would give us a better measure of how close our predictions were to their actual rankings. 
+
+Alternative metrics we will explore include NPV, specificity, and AUC. 
+
+## References
+[1] James Pham, Edric Kyauk, and Edwin Park. “Predicting Song Popularity”. http://cs229.stanford.edu/proj2015/140_report.pdf 
+
+[2] J. S. Gulmatico, J. A. B. Susa, M. A. F. Malbog, A. Acoba, M. D. Nipas and J. N. Mindoro, "SpotiPred: A Machine Learning Approach Prediction of Spotify Music Popularity by Audio Features," 2022 Second International Conference on Power, Control and Computing Technologies (ICPC2T), 2022, pp. 1-5, doi: 10.1109/ICPC2T53885.2022.9776765. 
+
+[3] Zayd Al-Beitawi, Mohammad Salehan and Sonya Zhang. “What Makes a Song Trend? Cluster Analysis of Musical Attributes for Spotify Top Trending Songs”, 2020. http://www.na-businesspress.com/JMDC/JMDC14-3/8_Al-BeitawiFinal.pdf 
 
 ## Proposed Timeline and Member Responsibilities
 
@@ -23,48 +44,41 @@ Week 1 (October 3)
 - Finish Project Proposal
 - Create Project Proposal Video
 
-<p>Week 2 (October 10)</p>
-<ul>
-  <li>Model 1 Design & Selection</li>
-  <li>Model 1 Data Cleaning</li>
-  <li>Model 1 Data Visualization</li>
-  <li>Model 1 Feature Reduction</li>
-  <li>Model 1 Implementation & Coding</li>
-</ul>
-<p>Week 3 (October 17)</p>
-<ul>
-  <li>Model 1 Results Evaluation</li>
-</ul>
-<p>Week 4 (October 24)</p>
-<ul>
-  <li>Model 2 Design & Selection</li>
-  <li>Model 2 Data Cleaning</li>
-  <li>Model 2 Data Visualization</li>
-  <li>Model 2 Feature Reduction</li>
-  <li>Model 2 Implementation & Coding</li>
-</ul>
-<p>Week 5 (October 31)</p>
-<ul>
-  <li>Model 2 Results Evaulation</li>
-</ul>
-<p>Week 6 (November 7)</p>
-<ul>
-  <li>Finish Project Midpoint Report</li>
-  <li>Peer Evaulation</li>
-</ul>
-<p>Week 7 (November 14)</p>
-<ul>
-  <li>Model 3 Design & Selection</li>
-  <li>Model 3 Data Cleaning</li>
-  <li>Model 3 Data Visualization</li>
-  <li>Model 3 Feature Reduction</li>
-  <li>Model 3 Implementation & Coding</li>
-</ul>
-<p>Week 8 (November 21)</p>
-<ul>
-  <li>Model 3 Results Evaluation</li>
-  <li>Comparison across all models</li>
-</ul>
+Week 2 (October 10)
+- Model 1 Design & Selection
+- Model 1 Data Cleaning
+- Model 1 Data Visualization
+- Model 1 Feature Reduction
+- Model 1 Implementation & Coding
+
+Week 3 (October 17)
+- Model 1 Results Evaluation
+
+Week 4 (October 24)
+- Model 2 Design & Selection
+- Model 2 Data Cleaning
+- Model 2 Data Visualization
+- Model 2 Feature Reduction
+- Model 2 Implementation & Coding
+
+Week 5 (October 31)
+- Model 2 Results Evaulation
+
+Week 6 (November 7)
+- Finish Project Midpoint Report
+- Peer Evaulation
+
+Week 7 (November 14)
+- Model 3 Design & Selection
+- Model 3 Data Cleaning
+- Model 3 Data Visualization
+- Model 3 Feature Reduction
+- Model 3 Implementation & Coding
+
+Week 8 (November 21)
+- Model 3 Results Evaluation
+- Comparison across all models
+
 Week 9 (November 28)
 - Video Creation and Recording
 - Final Report
