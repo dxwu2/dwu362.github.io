@@ -10,7 +10,7 @@ Team: Vanessa Yip (kyip31), Kevin Wu (kwu333), Yi-Ting Chiang (ychiang48), Danie
 # CS 7641 Machine Learning Group Project
 
 ## Introduction/Background
-We will focus on two datasets found on kaggle. The Spotify Chart dataset (https://www.kaggle.com/datasets/dhruvildave/spotify-charts) includes songs that are in the Top 200 Chart since 2017. The Spotify dataset (https://www.kaggle.com/datasets/yamaerenay/spotify-dataset-19212020-600k-tracks?resource=download&select=tracks.csv) includes all songs on Spotify released from year 1921 to 2020. We will also extract further information about songs and artists through Spotify’s Web API. 
+Music has been a huge part in our daily lives. In 2021 alone, the music industry market generated $61.82 billion. As producers, it would be invaluable to be able to predict the success of a song. With Spotify being the largest music streaming service provider possessing over 400 million active users, the goal of this project is to predict whether a song will land in Spotify’s Top 200 chart. Relevant researches have been done on analysis of song components, lyrics, music emotions and more, which are referenced below.  
 
 We will focus on two datasets found on kaggle. The Spotify Chart dataset (https://www.kaggle.com/datasets/dhruvildave/spotify-charts) includes songs that are in the Top 200 Chart since 2017. The Spotify dataset (https://www.kaggle.com/datasets/yamaerenay/spotify-dataset-19212020-600k-tracks?resource=download&select=tracks.csv) includes all songs on Spotify released from year 1921 to 2020. We will also extract further information about songs and artists through Spotify’s Web API. 
 
@@ -45,11 +45,13 @@ Another viable option that might produce smoother results would be using R^2 sco
 Alternative metrics we will explore include NPV, specificity, and AUC. 
 
 ## References
-[1] James Pham, Edric Kyauk, and Edwin Park. “Predicting Song Popularity”. http://cs229.stanford.edu/proj2015/140_report.pdf 
+[1] Pham, J., Kyauk, E., & Park, E. (2016). Predicting song popularity. Dept. Comput. Sci., Stanford Univ., Stanford, CA, USA, Tech. Rep, 26. 
 
 [2] J. S. Gulmatico, J. A. B. Susa, M. A. F. Malbog, A. Acoba, M. D. Nipas and J. N. Mindoro, "SpotiPred: A Machine Learning Approach Prediction of Spotify Music Popularity by Audio Features," 2022 Second International Conference on Power, Control and Computing Technologies (ICPC2T), 2022, pp. 1-5, doi: 10.1109/ICPC2T53885.2022.9776765. 
 
-[3] Zayd Al-Beitawi, Mohammad Salehan and Sonya Zhang. “What Makes a Song Trend? Cluster Analysis of Musical Attributes for Spotify Top Trending Songs”, 2020. http://www.na-businesspress.com/JMDC/JMDC14-3/8_Al-BeitawiFinal.pdf 
+[3] Al-Beitawi, Z., Salehan, M., & Zhang, S. (2020). “What makes a song trend? Cluster analysis of musical attributes for Spotify top trending songs”. Journal of Marketing Development and Competitiveness, 14(3), 79-91. 
+
+[4] Martín-Gutiérrez, D., Peñaloza, G. H., Belmonte-Hernández, A., & García, F. Á. (2020). “A multimodal end-to-end deep learning architecture for music popularity prediction”. IEEE Access, 8, 39361-39374. 
 
 ## Proposed Timeline and Member Responsibilities
 
@@ -58,11 +60,15 @@ Alternative metrics we will explore include NPV, specificity, and AUC.
 ## Contributions Table
 Vanessa:
 - Introduction, Problem Definition
+
 Kevin:
 - Dataset and reference papers, methods of analysis
+
 Yi-Ting:
 - Dataset and reference papers, proposal video
+
 Daniel:
 - website, potential results and discussion, proposal video
+
 Chengrui:
 - Gantt chart, dataset
