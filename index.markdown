@@ -53,6 +53,8 @@ Alternative metrics we will explore include NPV, specificity, and AUC.
 
 ## Proposed Timeline and Member Responsibilities
 
+![Gantt Chart](/docs/assets/gantt_chart.png)
+
 Week 1 (October 3)
 - Finish Project Proposal
 - Create Project Proposal Video
