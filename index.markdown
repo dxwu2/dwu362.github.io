@@ -55,46 +55,14 @@ Alternative metrics we will explore include NPV, specificity, and AUC.
 
 ![Gantt Chart](/docs/assets/gantt_chart.png)
 
-Week 1 (October 3)
-- Finish Project Proposal
-- Create Project Proposal Video
-
-Week 2 (October 10)
-- Model 1 Design & Selection
-- Model 1 Data Cleaning
-- Model 1 Data Visualization
-- Model 1 Feature Reduction
-- Model 1 Implementation & Coding
-
-Week 3 (October 17)
-- Model 1 Results Evaluation
-
-Week 4 (October 24)
-- Model 2 Design & Selection
-- Model 2 Data Cleaning
-- Model 2 Data Visualization
-- Model 2 Feature Reduction
-- Model 2 Implementation & Coding
-
-Week 5 (October 31)
-- Model 2 Results Evaulation
-
-Week 6 (November 7)
-- Finish Project Midpoint Report
-- Peer Evaulation
-
-Week 7 (November 14)
-- Model 3 Design & Selection
-- Model 3 Data Cleaning
-- Model 3 Data Visualization
-- Model 3 Feature Reduction
-- Model 3 Implementation & Coding
-
-Week 8 (November 21)
-- Model 3 Results Evaluation
-- Comparison across all models
-
-Week 9 (November 28)
-- Video Creation and Recording
-- Final Report
-- Project Due December 6 AOE
+## Contributions Table
+Vanessa:
+- Introduction, Problem Definition
+Kevin:
+- Dataset and reference papers, methods of analysis
+Yi-Ting:
+- Dataset and reference papers, proposal video
+Daniel:
+- website, potential results and discussion, proposal video
+Chengrui:
+- Gantt chart, dataset
