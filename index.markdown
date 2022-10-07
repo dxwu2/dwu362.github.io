@@ -10,7 +10,9 @@ Team: Vanessa Yip (kyip31), Kevin Wu (kwu333), Yi-Ting Chiang (ychiang48), Danie
 # CS 7641 Machine Learning Group Project
 
 ## Introduction/Background
-Music has been a huge part of our daily lives. In 2021, the music industry market generates $61.82 billion, and has grown 36% since 2012. Therefore, predicting a song’s popularity is crucial to keep business competitive in the market. 
+We will focus on two datasets found on kaggle. The Spotify Chart dataset (https://www.kaggle.com/datasets/dhruvildave/spotify-charts) includes songs that are in the Top 200 Chart since 2017. The Spotify dataset (https://www.kaggle.com/datasets/yamaerenay/spotify-dataset-19212020-600k-tracks?resource=download&select=tracks.csv) includes all songs on Spotify released from year 1921 to 2020. We will also extract further information about songs and artists through Spotify’s Web API. 
+
+We will focus on two datasets found on kaggle. The Spotify Chart dataset (https://www.kaggle.com/datasets/dhruvildave/spotify-charts) includes songs that are in the Top 200 Chart since 2017. The Spotify dataset (https://www.kaggle.com/datasets/yamaerenay/spotify-dataset-19212020-600k-tracks?resource=download&select=tracks.csv) includes all songs on Spotify released from year 1921 to 2020. We will also extract further information about songs and artists through Spotify’s Web API. 
 
 ## Problem Definition
 If Rihanna returns from hiatus and decides to release a new album after eight years, how likely are her songs going to trend on streaming platforms? Was anyone able to foresee Olivia Rodrigo’s success with her debut album? Combination of music components, including genre, artist attributes, song characteristics all contribute towards the success of a song, and machine learning algorithm could serve as an extremely useful method for producers and companies to predict the successes of their songs.  
@@ -18,9 +20,20 @@ If Rihanna returns from hiatus and decides to release a new album after eight ye
 Our team aims to construct a model that determines whether a newly released song will be included in Spotify’s Top 200 chart. Ultimately, we believe that this model could help drive music production processes and set up a song for success even before it is released. 
 
 ## Methods
-We will start by performing Principal Component Analysis (PCA) to reduce the dimensionality of dataset and extract the most relevant features that maximize variance in the data. Depending on how much of the available Spotify data we deem as relevant, we will also perform incremental K-Nearest Neighbors and the Gaussian Normal Basis.  
+### Data Preprocessing  
+- Initially perform PCA to reduce dimensionality of dataset and extract the most relevant features that maximize variance in the data. Depending on how much of the available Spotify we deem as relevant, we will also perform incremental  
+- Normalized data and split into training and testing sets (8:2) for cross validation. The validation set will be a subset of the training set. 
 
-We will also utilize support vector machines, as they have been one of the most ubiquitous classifiers for music classification. As SVMs are a binary classifier, we will utilize a radial basis function (RBF) kernel to enlarge the feature space.  
+### Supervised Methods  
+- K-nearest neighbors as a starting point for classification of smaller samples of our dataset, but we anticipate scaling it will be impractical for the entire dataset.  
+- Support vector machine has been one of the most ubiquitous classifiers for music classification. As SVMs are a binary classifier, we will utilize a radial basis function (RBF) kernel to enlarge the feature space.  
+- Gaussian naïve bayes, random forest, decision tree 
+
+### Unsupervised Methods  
+- Agglomerative clustering, k-means  
+- Neural networks (this might a bit too ambitious) 
+
+Our initial data exploration will establish baseline models and later transition to higher-performance models. We anticipate that non-linear models such as boosting trees (XGBoost) or neural networks will outperform linear models. 
 
 ## Potential Results and Discussion
 There will definitely be some quantitative measurement of accuracy that will be used in our metrics. We have a few options: 
