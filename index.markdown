@@ -21,28 +21,28 @@ Our team aims to construct a model that determines whether a newly released song
 
 ## Methods
 ### Data Preprocessing  
-- Initially perform PCA to reduce dimensionality of dataset and extract the most relevant features that maximize variance in the data. Depending on how much of the available Spotify we deem as relevant, we will also perform incremental  
-- Normalized data and split into training and testing sets (8:2) for cross validation. The validation set will be a subset of the training set. 
+- Initially perform PCA (or incremental) to reduce dimensionality of dataset and extract the most relevant features that maximize variance in the data. 
+- Normalize data and split into training and testing sets (8:2) for cross validation. The validation set will be a subset of the training set. 
 
 ### Supervised Methods  
 - K-nearest neighbors as a starting point for classification of smaller samples of our dataset, but we anticipate scaling it will be impractical for the entire dataset.  
 - Support vector machine has been one of the most ubiquitous classifiers for music classification. As SVMs are a binary classifier, we will utilize a radial basis function (RBF) kernel to enlarge the feature space.  
-- Gaussian naïve bayes, random forest, decision tree 
+- Gaussian naïve bayes, random forest, decision trees 
 
 ### Unsupervised Methods  
 - Agglomerative clustering, k-means  
-- Neural networks (this might a bit too ambitious) 
+- Neural networks (eg: CNN)
 
 Our initial data exploration will establish baseline models and later transition to higher-performance models. We anticipate that non-linear models such as boosting trees (XGBoost) or neural networks will outperform linear models. 
 
 ## Potential Results and Discussion
-There will definitely be some quantitative measurement of accuracy that will be used in our metrics. We have a few options: 
+Quantitative evaluation metrics for our model include: 
 
-One is simply the accuracy score. We want to measure how accurate we are in predicting whether a list of songs ends up in the top 200 trending or not. 
+Accuracy score as we are predicting whether a list of songs ends up in the top 200 trending or not. 
 
-Another viable option that might produce smoother results would be using R^2 score. Instead of just a binary label, we can attribute song’s with an actual ranking from 1-200 or even to beyond 200. This would give us a better measure of how close our predictions were to their actual rankings. 
+Another viable option that might produce smoother results would be using R^2 score. Instead of just a binary label, we can attribute songs with an actual ranking from 1-200 or even to beyond 200. This would give us a better measure of how close our predictions were to their actual rankings. 
 
-Alternative metrics we will explore include NPV, specificity, and AUC. 
+Alternative metrics we will explore include NPV, specificity, F1 score, and AUC. 
 
 ## References
 [1] Pham, J., Kyauk, E., & Park, E. (2016). Predicting song popularity. Dept. Comput. Sci., Stanford Univ., Stanford, CA, USA, Tech. Rep, 26. 
