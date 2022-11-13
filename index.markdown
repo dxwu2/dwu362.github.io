@@ -23,6 +23,22 @@ Our team aims to construct a model that determines whether a newly released song
 There is plenty of data collected on Spotify on the internet. Our data originated from two datasets on Kaggle: 1) [Spotify Top 200 Charts](https://www.kaggle.com/datasets/dhruvildave/spotify-charts) and 2) [All Songs on Spotify](https://www.kaggle.com/datasets/yamaerenay/spotify-dataset-19212020-600k-tracks?resource=download&select=dict_artists.json). We were able to join the two datasets by joining rows by linking the song ID in one table to the song URL in the other table (by parsing out the song ID in the URL).
 
 ## Data Visualization and Preprocessing
+
+### Joining all the datasets
+The first dataset allowed us to identify songs that are in the top 200 chart and the second dataset contains attributes of each song (e.g. tempo, liveness, acousticness). By joining the first two datasets, we acquired a dataset that contains attributes of each song as well as a column labeling whether the song was a top 200 song. As the first dataset has song ID and the date the song was charted as the primary key, one song may appear multiple times. Hence we dropped duplicates and only took unique songs out of the first dataset. We also matched the timeframe of the two datasets and limited it to January 2017 to April 2021 to avoid biased comparison. 
+
+As we were preprocessing the data, we noticed that some songs that were listed in the top 200 chart were missing in the second dataset. As data in the second dataset was originally extracted from Spotify’s API, we extracted song and artist data from Spotify APIs via known unique song identifiers. 
+
+Afterwards, we joined the above dataset with the third dataset which contains attributes about each artists (e.g. number of followers on Spotify, popularity). As each song may be sung more than one artist, with a maximum of 58 artists per song, we decided to first look at the distribution of the number of artists per song, with the following results:
+[Artists per Song](/docs/assets/artists_per_song.png)
+
+With further investigation, we also extracted the information below regarding number of artists for a song at different percentiles:
+- 80%: 1
+- 90%: 2
+- 97.5%: 3
+Upon such analysis, we decided to truncate the number of artists per song to 3 and joined the dataset with the artists dataset. After which we added two new columns, ‘followers_total’ and ‘popularity_total’ which sums up the followers and popularity of the 3(or fewer) artist(s). 
+
+### Principal Component Analysis
 We perform Principal Component Analysis (PCA) via our own coded implementation on our main dataset to reduce the number of features to 2. Since our dataset is fairly large, with over 50000 observations and 16 different features, it is important to find ways to reduce the dimensionality of our data so that we can reduce the complexity of our analysis while still preserving the most important parts of our data. The results ran on our dataset are plotted in the graph below:
 ![PCA Results](/docs/assets/midterm_pca.png)
 
