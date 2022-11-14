@@ -5,14 +5,12 @@
 layout: home
 ---
 
-Team: Vanessa Yip (kyip31), Kevin Wu (kwu333), Yi-Ting Chiang (ychiang48), Daniel Wu (dwu362), Chengrui Li (cli420)
+Team: Kwan Wing Yip (kyip31), Kevin Wu (kwu333), Yi-Ting Chiang (ychiang48), Daniel Wu (dwu362), Chengrui Li (cli420)
 
 # CS 7641 Machine Learning Group Project
 
 ## Introduction/Background
 Music has been a huge part in our daily lives. In 2021 alone, the music industry market generated $61.82 billion. As producers, it would be invaluable to be able to predict the success of a song. With Spotify being the largest music streaming service provider possessing over 400 million active users, the goal of this project is to predict whether a song will land in Spotify’s Top 200 chart. Relevant researches have been done on analysis of song components, lyrics, music emotions and more, which are referenced below.  
-
-We will focus on two datasets found on kaggle. The Spotify Chart dataset (https://www.kaggle.com/datasets/dhruvildave/spotify-charts) includes songs that are in the Top 200 Chart since 2017. The Spotify dataset (https://www.kaggle.com/datasets/yamaerenay/spotify-dataset-19212020-600k-tracks?resource=download&select=tracks.csv) includes all songs on Spotify released from year 1921 to 2020. We will also extract further information about songs and artists through Spotify’s Web API. 
 
 ## Problem Definition
 If Rihanna returns from hiatus and decides to release a new album after eight years, how likely are her songs going to trend on streaming platforms? Was anyone able to foresee Olivia Rodrigo’s success with her debut album? Combination of music components, including genre, artist attributes, song characteristics all contribute towards the success of a song, and machine learning algorithm could serve as an extremely useful method for producers and companies to predict the successes of their songs.  
@@ -22,13 +20,12 @@ Our team aims to construct a model that determines whether a newly released song
 # Midterm Report #
 
 ## Data Collection
-There is plenty of data collected on Spotify on the internet. Our data originated from two datasets on Kaggle: 1) [Spotify Top 200 Charts](https://www.kaggle.com/datasets/dhruvildave/spotify-charts) and 2) [All Songs on Spotify](https://www.kaggle.com/datasets/yamaerenay/spotify-dataset-19212020-600k-tracks?resource=download&select=dict_artists.json). We were able to join the two datasets by joining rows by linking the song ID in one table to the song URL in the other table (by parsing out the song ID in the URL).
 
-There is plenty of data collected on Spotify on the internet. Our data originated from four sources:
-Songs that were on the Top 200 chart from January 2017 to December 2021(https://www.kaggle.com/datasets/dhruvildave/spotify-charts)
-1. Song attributes of 600K+ Spotify tracks released from 1900 to April 2021(https://www.kaggle.com/datasets/yamaerenay/spotify-dataset-19212020-600k-tracks?resource=download&select=tracks.csv)
-2. Spotify’s API (https://developer.spotify.com/documentation/web-api/reference/#/)
-Artist attributes (https://www.kaggle.com/datasets/yamaerenay/spotify-dataset-19212020-600k-tracks?resource=download&select=artists.csv)
+There is plenty of data collected on Spotify on the internet. Our data originated from three sources:
+1. [Top 200](https://www.kaggle.com/datasets/dhruvildave/spotify-charts): Songs that were on the chart from January 2017 to December 2021
+2. [Song attributes of 600K+]((https://www.kaggle.com/datasets/yamaerenay/spotify-dataset-19212020-600k-tracks?resource=download&select=tracks.csv)): Spotify tracks released from 1900 to April 2021
+3. [Spotify’s API](https://developer.spotify.com/documentation/web-api/reference/#/)
+4. [Artist attributes](https://www.kaggle.com/datasets/yamaerenay/spotify-dataset-19212020-600k-tracks?resource=download&select=artists.csv)
 
 ## Data Visualization and Preprocessing
 
@@ -160,7 +157,7 @@ Our initial data exploration will establish baseline models and later transition
 ![Gantt Chart](/docs/assets/gantt_chart.png)
 
 ## Contributions Table
-Vanessa:
+Kwan Wing:
 - Data collection, data preprocessing, introduction, Problem Definition
 
 Kevin:
