@@ -58,8 +58,6 @@ We perform Principal Component Analysis (PCA) via our own coded implementation o
 ![PCA Results](/docs/assets/midterm_pca.png)
 
 ## Modeling
-### Support Vector Machines - Supervised Learning
-The first model we implemented to test on our datasets was SVM with linear, polynomial, RBF kernels. We chose to test this model first, as it is more computationally efficient and accurate on datasets with larger feature vectors. Indeed, the results followed this trend. As shown below, we received a mean accuracy of 0.859 across the three different kernels. Although this model produces fairly accurate results, we suspect there might be some issues of overfitting. For the final report, we aim to add cross validation and regularization (e.g. Lasso) of our dataset before running SVM and seeing if we can still achieve high accuracy amidst these conditions.
 
 Model Building:
 1. Keep the numerical features
@@ -69,6 +67,9 @@ Model Building:
 ['acousticness', 'danceability', 'duration_ms', 'energy', 'explicit', 'followers_total', 'instrumentalness', 'liveness', 'loudness', 'mode', 'popularity_total', 'valence']
 5. Run the SVM Model + Logistic Regression Model
 6. Compare the results: accuracy, confusion matrix
+
+### Support Vector Machines - Supervised Learning
+The first model we implemented to test on our datasets was SVM with linear, polynomial, RBF kernels. We chose to test this model first, as it is more computationally efficient and accurate on datasets with larger feature vectors. Indeed, the results followed this trend. As shown below, we received a mean accuracy of 0.877 across the three different kernels. Although this model produces fairly accurate results, we suspect there might be some issues of overfitting. For the final report, we aim to add cross validation and regularization (e.g. Lasso) of our dataset before running SVM and seeing if we can still achieve high accuracy amidst these conditions.
 
 *Results - Confusion Matrices*
 
@@ -89,9 +90,15 @@ RBF Kernel:
 
 | Kernel Type       | Accuracy |
 |-------------------|-------|
-| Linear      | 0.855 |
-| Polynomial  | 0.862 |
-| RBF         | 0.859 |
+| Linear      | 0.879 |
+| Polynomial  | 0.874 |
+| RBF         | 0.879 |
+
+### Logistic Regression - Supervised Learning
+The next model we tested on our dataset was logistic regression, another supervised method. This was a no-brainer, as our dataset labels are binary values, so this fits the needs of the logistic regression model perfectly. This model was fairly simple to implement, and it searches for a line to separate the two labels in our dataset. Again, we ended up with relatively high accuracies for this model, at about 0.8885.
+
+*Results - Confusion Matrix*
+![Logistic Confusion Matrix](/docs/assets/logistic_confusion.png)
 
 
 # Future Goals
@@ -124,13 +131,13 @@ Vanessa:
 - Data collection, data preprocessing, introduction, Problem Definition
 
 Kevin:
-- Dataset and reference papers, methods of analysis
+- API data collection, data preprocessing, dataset and reference papers, methods of analysis
 
 Yi-Ting:
-- Dataset and reference papers, proposal video
+- Correlation Heatmap, variables selection, model building, dataset and reference papers, proposal video
 
 Daniel:
 - Data preprocessing, model evaluations, website, potential results and discussion, proposal video
 
 Chengrui:
-- Gantt chart, dataset
+- Model building, running models, Gantt chart, dataset
