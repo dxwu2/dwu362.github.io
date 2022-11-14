@@ -88,6 +88,8 @@ RBF Kernel:
 
 *Results - Accuracy*
 
+Since our dataset labels are a simple boolean, we use accuracy classification score to evaluate the performance of each model. Accuracy is simply defined as the number of labels predicted correctly divided by the total number of data observations.
+
 | Kernel Type       | Accuracy |
 |-------------------|-------|
 | Linear      | 0.879 |
@@ -135,10 +137,10 @@ Kevin:
 - API data collection, data preprocessing, dataset and reference papers, methods of analysis
 
 Yi-Ting:
-- Correlation Heatmap, variables selection, model building, dataset and reference papers, proposal video
+- Correlation Heatmap, variables selection, model building (Logistic regression), dataset and reference papers, proposal video
 
 Daniel:
 - Data preprocessing, model evaluations, website, potential results and discussion, proposal video
 
 Chengrui:
-- Model building, running models, Gantt chart, dataset
+- Data preprocessing, SVM (‘linear’,’polynomial’,’rbf’) models, Gantt chart, dataset
