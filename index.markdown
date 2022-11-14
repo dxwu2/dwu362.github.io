@@ -53,9 +53,28 @@ With further investigation, we also extracted the information below regarding nu
 
 Upon such analysis, we decided to truncate the number of artists per song to 3 and joined the dataset with the artists dataset. After which we added two new columns, ‘followers_total’ and ‘popularity_total’ which sums up the followers and popularity of the 3 (or fewer) artist(s). 
 
+### Downsampling
+Additionally, we discovered a class imbalance between songs that were and were not labeled as top 200.
+
+![Class imbalance](/docs/assets/class_imbalance.png)
+
+A song that was in the top 200 is labeled 0 and vice versa. As seen above, there is a great imbalance between the two classes. We tackled this problem by downsampling the songs that were not in the top 200 so that the number of songs in each were roughly equal. 
+
+
 ### Principal Component Analysis
 We perform Principal Component Analysis (PCA) via our own coded implementation on our main dataset to reduce the number of features to 2. Since our dataset is fairly large, with over 50000 observations and 16 different features, it is important to find ways to reduce the dimensionality of our data so that we can reduce the complexity of our analysis while still preserving the most important parts of our data. The results ran on our dataset are plotted in the graph below:
 ![PCA Results](/docs/assets/midterm_pca.png)
+
+### Outlier Rejection
+Additionally, we computed z-scores for all quantitative features in our dataset to detect any outliers. Boxplots for each of the features are displayed below.
+
+![Outliers](/docs/assets/outliers.png)
+
+An experimentally determined threshold z-score of ±5.199 was applied to determine the amount of outliers within the dataset with respect to each individual feature. A summary of the outlier counts is as shown below. While all the song data points identified through this method could have been excluded, we opted to examine each of these outlier features more closely and compare them to the feature descriptions as defined by Spotify API documentation. For some of the features where outliers were detected, namely “loudness” and “speechiness”, the data has already been scaled by Spotify’s algorithms. Moreover, the feature “time_signature” was a discrete categorical variable (0-5) and thus outlier removal was not necessary. For these reasons, these features were not considered when removing outliers in our data. Finally, we did remove 84 songs due to “duration_ms” so that the song duration feature could be scaled appropriately when used to train and test our models.
+
+Here are the amount of outliers detected for each feature:
+
+![Amount of Outliers](/docs/assets/amt_outliers.png)
 
 ## Modeling
 
@@ -103,6 +122,17 @@ The next model we tested on our dataset was logistic regression, another supervi
 
 ![Logistic Confusion Matrix](/docs/assets/logistic_confusion.png)
 
+*Results*
+
+Accuracy: 0.8885
+
+Misclassification Rate: 0.1115
+
+True Positive Rate: 0.9175
+
+True Negative Rate: 0.8915
+
+Precision: 0.8683
 
 # Future Goals
 
