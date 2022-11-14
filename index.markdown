@@ -24,7 +24,18 @@ Our team aims to construct a model that determines whether a newly released song
 ## Data Collection
 There is plenty of data collected on Spotify on the internet. Our data originated from two datasets on Kaggle: 1) [Spotify Top 200 Charts](https://www.kaggle.com/datasets/dhruvildave/spotify-charts) and 2) [All Songs on Spotify](https://www.kaggle.com/datasets/yamaerenay/spotify-dataset-19212020-600k-tracks?resource=download&select=dict_artists.json). We were able to join the two datasets by joining rows by linking the song ID in one table to the song URL in the other table (by parsing out the song ID in the URL).
 
+There is plenty of data collected on Spotify on the internet. Our data originated from four sources:
+Songs that were on the Top 200 chart from January 2017 to December 2021(https://www.kaggle.com/datasets/dhruvildave/spotify-charts)
+1. Song attributes of 600K+ Spotify tracks released from 1900 to April 2021(https://www.kaggle.com/datasets/yamaerenay/spotify-dataset-19212020-600k-tracks?resource=download&select=tracks.csv)
+2. Spotify’s API (https://developer.spotify.com/documentation/web-api/reference/#/)
+Artist attributes (https://www.kaggle.com/datasets/yamaerenay/spotify-dataset-19212020-600k-tracks?resource=download&select=artists.csv)
+
 ## Data Visualization and Preprocessing
+
+### Correlation Matrix
+We generated a correlation matrix to help us understand our dataset better. Here, we can see which features are positively or negatively correlated to each other, and to what extent. In the future, this will allow for more fine-tuned feature selection via backward feature elimination that will produce more versatile and robust results in our testing on different models. 
+
+![Correlation Matrix](/docs/assets/correlation_matrix.png)
 
 ### Joining all the datasets
 The first dataset allowed us to identify songs that are in the top 200 chart and the second dataset contains attributes of each song (e.g. tempo, liveness, acousticness). By joining the first two datasets, we acquired a dataset that contains attributes of each song as well as a column labeling whether the song was a top 200 song. As the first dataset has song ID and the date the song was charted as the primary key, one song may appear multiple times. Hence we dropped duplicates and only took unique songs out of the first dataset. We also matched the timeframe of the two datasets and limited it to January 2017 to April 2021 to avoid biased comparison. 
@@ -45,11 +56,6 @@ Upon such analysis, we decided to truncate the number of artists per song to 3 a
 ### Principal Component Analysis
 We perform Principal Component Analysis (PCA) via our own coded implementation on our main dataset to reduce the number of features to 2. Since our dataset is fairly large, with over 50000 observations and 16 different features, it is important to find ways to reduce the dimensionality of our data so that we can reduce the complexity of our analysis while still preserving the most important parts of our data. The results ran on our dataset are plotted in the graph below:
 ![PCA Results](/docs/assets/midterm_pca.png)
-
-### Correlation Matrix
-We also generated a correlation matrix to allow for more fine-tuned feature selection via backward feature elimination. Having both sets of data that have been reduced in different ways allows us to be more versatile in our testing on different models. 
-
-![Correlation Matrix](/docs/assets/correlation_matrix.png)
 
 ## Modeling
 ### Support Vector Machines - Supervised Learning
