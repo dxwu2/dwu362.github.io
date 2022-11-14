@@ -98,6 +98,7 @@ RBF Kernel:
 The next model we tested on our dataset was logistic regression, another supervised method. This was a no-brainer, as our dataset labels are binary values, so this fits the needs of the logistic regression model perfectly. This model was fairly simple to implement, and it searches for a line to separate the two labels in our dataset. Again, we ended up with relatively high accuracies for this model, at about 0.8885.
 
 *Results - Confusion Matrix*
+
 ![Logistic Confusion Matrix](/docs/assets/logistic_confusion.png)
 
 
