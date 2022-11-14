@@ -61,6 +61,17 @@ We perform Principal Component Analysis (PCA) via our own coded implementation o
 ### Support Vector Machines - Supervised Learning
 The first model we implemented to test on our datasets was SVM with linear, polynomial, RBF kernels. We chose to test this model first, as it is more computationally efficient and accurate on datasets with larger feature vectors. Indeed, the results followed this trend. As shown below, we received a mean accuracy of 0.859 across the three different kernels. Although this model produces fairly accurate results, we suspect there might be some issues of overfitting. For the final report, we aim to add cross validation and regularization (e.g. Lasso) of our dataset before running SVM and seeing if we can still achieve high accuracy amidst these conditions.
 
+Model Building:
+1. Keep the numerical features
+2. Scale the data
+3. Select our features using forward selection and backward elimination
+4. The results for both methods are the same, and the selected features are as follow:
+['acousticness', 'danceability', 'duration_ms', 'energy', 'explicit', 'followers_total', 'instrumentalness', 'liveness', 'loudness', 'mode', 'popularity_total', 'valence']
+5. Run the SVM Model + Logistic Regression Model
+6. Compare the results: accuracy, confusion matrix
+
+*Results - Confusion Matrices*
+
 Linear Kernel:
 
 ![Linear SVM Confusion Matrix](/docs/assets/linear_confusion.png)
@@ -73,6 +84,9 @@ RBF Kernel:
 
 ![RBF SVM Confusion Matrix](/docs/assets/rbf_confusion.png)
 
+
+*Results - Accuracy*
+
 | Kernel Type       | Accuracy |
 |-------------------|-------|
 | Linear      | 0.855 |
@@ -80,15 +94,10 @@ RBF Kernel:
 | RBF         | 0.859 |
 
 
-
-## Methods
-### Data Preprocessing  
-- Initially perform PCA (or incremental) to reduce dimensionality of dataset and extract the most relevant features that maximize variance in the data. 
-- Normalize data and split into training and testing sets (8:2) for cross validation. The validation set will be a subset of the training set. 
+# Future Goals
 
 ### Supervised Methods  
-- K-nearest neighbors as a starting point for classification of smaller samples of our dataset, but we anticipate scaling it will be impractical for the entire dataset.  
-- Support vector machine has been one of the most ubiquitous classifiers for music classification. As SVMs are a binary classifier, we will utilize a radial basis function (RBF) kernel to enlarge the feature space.  
+- K-nearest neighbors as a starting point for classification of smaller samples of our dataset, but we anticipate scaling it will be impractical for the entire dataset.
 - Gaussian naïve bayes, random forest, decision trees 
 
 ### Unsupervised Methods  
@@ -96,15 +105,6 @@ RBF Kernel:
 - Neural networks (eg: CNN)
 
 Our initial data exploration will establish baseline models and later transition to higher-performance models. We anticipate that non-linear models such as boosting trees (XGBoost) or neural networks will outperform linear models. 
-
-## Potential Results and Discussion
-Quantitative evaluation metrics for our model include: 
-
-Accuracy score as we are predicting whether a list of songs ends up in the top 200 trending or not. 
-
-Another viable option that might produce smoother results would be using R^2 score. Instead of just a binary label, we can attribute songs with an actual ranking from 1-200 or even to beyond 200. This would give us a better measure of how close our predictions were to their actual rankings. 
-
-Alternative metrics we will explore include NPV, specificity, F1 score, and AUC. 
 
 ## References
 [1] Pham, J., Kyauk, E., & Park, E. (2016). Predicting song popularity. Dept. Comput. Sci., Stanford Univ., Stanford, CA, USA, Tech. Rep, 26. 
@@ -121,7 +121,7 @@ Alternative metrics we will explore include NPV, specificity, F1 score, and AUC.
 
 ## Contributions Table
 Vanessa:
-- Introduction, Problem Definition
+- Data collection, data preprocessing, introduction, Problem Definition
 
 Kevin:
 - Dataset and reference papers, methods of analysis
@@ -130,7 +130,7 @@ Yi-Ting:
 - Dataset and reference papers, proposal video
 
 Daniel:
-- website, potential results and discussion, proposal video
+- Data preprocessing, model evaluations, website, potential results and discussion, proposal video
 
 Chengrui:
 - Gantt chart, dataset
