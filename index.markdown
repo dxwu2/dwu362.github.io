@@ -32,7 +32,8 @@ The first dataset allowed us to identify songs that are in the top 200 chart and
 As we were preprocessing the data, we noticed that some songs that were listed in the top 200 chart were missing in the second dataset. As data in the second dataset was originally extracted from Spotify’s API, we extracted song and artist data from Spotify APIs via known unique song identifiers. 
 
 Afterwards, we joined the above dataset with the third dataset which contains attributes about each artists (e.g. number of followers on Spotify, popularity). As each song may be sung more than one artist, with a maximum of 58 artists per song, we decided to first look at the distribution of the number of artists per song, with the following results:
-[Artists per Song](/docs/assets/artists_per_song.png)
+
+![Artists per Song](/docs/assets/artists_per_song.png)
 
 With further investigation, we also extracted the information below regarding number of artists for a song at different percentiles:
 - 80%: 1
@@ -41,9 +42,22 @@ With further investigation, we also extracted the information below regarding nu
 
 Upon such analysis, we decided to truncate the number of artists per song to 3 and joined the dataset with the artists dataset. After which we added two new columns, ‘followers_total’ and ‘popularity_total’ which sums up the followers and popularity of the 3 (or fewer) artist(s). 
 
+![Correlation Matrix](/docs/assets/correlation_matrix.png)
+
 ### Principal Component Analysis
 We perform Principal Component Analysis (PCA) via our own coded implementation on our main dataset to reduce the number of features to 2. Since our dataset is fairly large, with over 50000 observations and 16 different features, it is important to find ways to reduce the dimensionality of our data so that we can reduce the complexity of our analysis while still preserving the most important parts of our data. The results ran on our dataset are plotted in the graph below:
 ![PCA Results](/docs/assets/midterm_pca.png)
+
+## Modeling
+### Support Vector Machines - Supervised Learning
+The first model we implemented to test on our datasets was SVM with linear, polynomial, RBF kernels. We chose to test this model first, as it is more computationally efficient and accurate on datasets with larger feature vectors. Indeed, the results followed this trend. As shown below, we received a mean accuracy of 0.859 across the three different kernels. Although this model produces fairly accurate results, we suspect there might be some issues of overfitting. For the final report, we aim to add cross validation and regularization (e.g. Lasso) of our dataset before running SVM and seeing if we can still achieve high accuracy amidst these conditions.
+
+| Kernel Type       | Accuracy |
+|-------------------|-------|
+| Linear      | 0.855 |
+| Polynomial  | 0.862 |
+| RBF         | 0.859 |
+
 
 
 ## Methods
