@@ -121,21 +121,20 @@ The next model we tested on our dataset was logistic regression, another supervi
 
 *Results*
 
-Accuracy: 0.8885
+Accuracy: 0.85
 
-Misclassification Rate: 0.1115
+Misclassification Rate: 0.15
 
-True Positive Rate: 0.9175
+True Positive Rate: 0.8830
 
-True Negative Rate: 0.8915
+True Negative Rate: 0.8187
 
-Precision: 0.8683
+Precision: 0.8222
 
 # Future Goals
 
-### Supervised Methods  
-- K-nearest neighbors as a starting point for classification of smaller samples of our dataset, but we anticipate scaling it will be impractical for the entire dataset.
-- Gaussian naïve bayes, random forest, decision trees 
+### Supervised Methods
+- Random forest, decision trees 
 
 ### Unsupervised Methods  
 - Agglomerative clustering, k-means  
