@@ -19,7 +19,7 @@ If Rihanna returns from hiatus and decides to release a new album after eight ye
 
 Our team aims to construct a model that determines whether a newly released song will be included in Spotify’s Top 200 chart. Ultimately, we believe that this model could help drive music production processes and set up a song for success even before it is released. 
 
-**Midterm Report**
+# Midterm Report #
 
 ## Data Collection
 There is plenty of data collected on Spotify on the internet. Our data originated from two datasets on Kaggle: 1) [Spotify Top 200 Charts](https://www.kaggle.com/datasets/dhruvildave/spotify-charts) and 2) [All Songs on Spotify](https://www.kaggle.com/datasets/yamaerenay/spotify-dataset-19212020-600k-tracks?resource=download&select=dict_artists.json). We were able to join the two datasets by joining rows by linking the song ID in one table to the song URL in the other table (by parsing out the song ID in the URL).
@@ -42,15 +42,30 @@ With further investigation, we also extracted the information below regarding nu
 
 Upon such analysis, we decided to truncate the number of artists per song to 3 and joined the dataset with the artists dataset. After which we added two new columns, ‘followers_total’ and ‘popularity_total’ which sums up the followers and popularity of the 3 (or fewer) artist(s). 
 
-![Correlation Matrix](/docs/assets/correlation_matrix.png)
-
 ### Principal Component Analysis
 We perform Principal Component Analysis (PCA) via our own coded implementation on our main dataset to reduce the number of features to 2. Since our dataset is fairly large, with over 50000 observations and 16 different features, it is important to find ways to reduce the dimensionality of our data so that we can reduce the complexity of our analysis while still preserving the most important parts of our data. The results ran on our dataset are plotted in the graph below:
 ![PCA Results](/docs/assets/midterm_pca.png)
 
+### Correlation Matrix
+We also generated a correlation matrix to allow for more fine-tuned feature selection via backward feature elimination. Having both sets of data that have been reduced in different ways allows us to be more versatile in our testing on different models. 
+
+![Correlation Matrix](/docs/assets/correlation_matrix.png)
+
 ## Modeling
 ### Support Vector Machines - Supervised Learning
 The first model we implemented to test on our datasets was SVM with linear, polynomial, RBF kernels. We chose to test this model first, as it is more computationally efficient and accurate on datasets with larger feature vectors. Indeed, the results followed this trend. As shown below, we received a mean accuracy of 0.859 across the three different kernels. Although this model produces fairly accurate results, we suspect there might be some issues of overfitting. For the final report, we aim to add cross validation and regularization (e.g. Lasso) of our dataset before running SVM and seeing if we can still achieve high accuracy amidst these conditions.
+
+Linear Kernel:
+
+![Linear SVM Confusion Matrix](/docs/assets/linear_confusion.png)
+
+Polynomial Kernel:
+
+![Polynomial SVM Confusion Matrix](/docs/assets/poly_confusion.png)
+
+RBF Kernel:
+
+![RBF SVM Confusion Matrix](/docs/assets/rbf_confusion.png)
 
 | Kernel Type       | Accuracy |
 |-------------------|-------|
