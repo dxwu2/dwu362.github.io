@@ -17,8 +17,6 @@ If Rihanna returns from hiatus and decides to release a new album after eight ye
 
 Our team aims to construct a model that determines whether a newly released song will be included in Spotify’s Top 200 chart. Ultimately, we believe that this model could help drive music production processes and set up a song for success even before it is released. 
 
-# Midterm Report #
-
 ## Data Collection
 
 There is plenty of data collected on Spotify on the internet. Our data originated from three sources:
@@ -136,18 +134,7 @@ True Positive Rate: 0.8830
 
 True Negative Rate: 0.8187
 
-Precision: 0.8222
-
-# Future Goals
-
-### Supervised Methods
-- Random forest, decision trees 
-
-### Unsupervised Methods  
-- Agglomerative clustering, k-means  
-- Neural networks (eg: CNN)
-
-Our initial data exploration will establish baseline models and later transition to higher-performance models. We anticipate that non-linear models such as boosting trees (XGBoost) or neural networks will outperform linear models. 
+Precision: 0.8222 
 
 ## References
 [1] Pham, J., Kyauk, E., & Park, E. (2016). Predicting song popularity. Dept. Comput. Sci., Stanford Univ., Stanford, CA, USA, Tech. Rep, 26. 
