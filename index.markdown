@@ -141,18 +141,27 @@ Precision: 0.8222
 
 ### Random Forest - Supervised Learning
 For the Random Forest Classifier, a model was made with 1000 decision trees and the minimum samples in a leaf did not go below 5% of the original dataset. Our accuracy was 85.6%. The results are shown below:
+
 ![Random Forest Result](/docs/assets/random_forest_res.png)
 
 Here is an example of one tree in the forest:
+
 ![Random Forest Example](/docs/assets/random_forest_example.png)
 
 ### Neural Network - Supervised Learning
 The Neural Network was made with two hidden layers. Some hyperparameter tuning was applied to the Neural Network to discover which parameters worked better for our dataset. Upon inspection, the top 15 accuracy results did not include “sigmoid” and “softmax” functions.  
 These are the parameters:
+
 ![NN params](/docs/assets/nn_params.png)
 
 These are the top 15 results: 
+
 ![NN results](/docs/assets/nn_results.png)
+
+## Conclusion
+Our models in the end generally performed at higher levels of accuracy than we had expected. Although some of our unsupervised models struggled with forming clusters amongst our dataset, all of our supervised models were able to hit accuracies over 80%. One main reason for this is most likely due to the large dimensionality of our dataset, making it harder for the unsupervised models to form clusters that correctly labeled our data.
+
+With these trained models and their decently accurate predictions on whether or not a song will end up in the Top 200 Charts, we hope up and coming artists can utilize our tool to analyze certain attributes of new songs that may increase its chances of being more popular.
 
 ## References
 [1] Pham, J., Kyauk, E., & Park, E. (2016). Predicting song popularity. Dept. Comput. Sci., Stanford Univ., Stanford, CA, USA, Tech. Rep, 26. 
