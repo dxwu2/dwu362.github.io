@@ -89,6 +89,9 @@ One of the simplest unsupervised learning models is the KMeans clustering algori
 ### Gaussian Mixture Model - Unsupervised Learning
 A better performing unsupervised learning model is the Gaussian Mixture Model (GMM), since it provides more flexibility in clustering by outputting the probability of a datapoint belonging to a cluster rather than a hard clustering like KMeans. We used cross-validation to split our dataset into training and testing data, running 10 iterations where 9 batches were used for training and the last batch was used for testing. To our surprise, the GMM did not perform as well as our KMeans Clustering algorithm, performing at an accuracy of only 0.688. 
 
+### DBScan - Unsupervised Learning
+The DBSCAN algorithm takes in two parameters, the minimum samples to be considered a cluster and the minimum distance between points. In order to test the different parameters, we set “eps”  between values (1e-4 - 10) and the “min_samples” between (2 - 500). Even after trying all of these, the DBSCAN algorithm still has trouble clustering a majority of the values presumably because many of these values are extremely noisy (pun intended). Our best accuracy came out to be 50.4% which is marginally better than the expected value of random guess. 
+
 ### Support Vector Machines - Supervised Learning
 The first supervised model we implemented to test on our datasets was SVM with linear, polynomial, RBF kernels. We chose to test this model first, as it is more computationally efficient and accurate on datasets with larger feature vectors. Indeed, the results followed this trend. As shown below, we received a mean accuracy of 0.877 across the three different kernels. Although this model produces fairly accurate results, we suspect there might be some issues of overfitting. For the final report, we aim to add cross validation and regularization (e.g. Lasso) of our dataset before running SVM and seeing if we can still achieve high accuracy amidst these conditions.
 
@@ -135,6 +138,21 @@ True Positive Rate: 0.8830
 True Negative Rate: 0.8187
 
 Precision: 0.8222 
+
+### Random Forest - Supervised Learning
+For the Random Forest Classifier, a model was made with 1000 decision trees and the minimum samples in a leaf did not go below 5% of the original dataset. Our accuracy was 85.6%. The results are shown below:
+![Random Forest Result](/docs/assets/random_forest_res.png)
+
+Here is an example of one tree in the forest:
+![Random Forest Example](/docs/assets/random_forest_example.png)
+
+### Neural Network - Supervised Learning
+The Neural Network was made with two hidden layers. Some hyperparameter tuning was applied to the Neural Network to discover which parameters worked better for our dataset. Upon inspection, the top 15 accuracy results did not include “sigmoid” and “softmax” functions.  
+These are the parameters:
+![NN params](/docs/assets/nn_params.png)
+
+These are the top 15 results: 
+![NN results](/docs/assets/nn_results.png)
 
 ## References
 [1] Pham, J., Kyauk, E., & Park, E. (2016). Predicting song popularity. Dept. Comput. Sci., Stanford Univ., Stanford, CA, USA, Tech. Rep, 26. 
