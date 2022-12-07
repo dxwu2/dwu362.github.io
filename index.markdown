@@ -88,6 +88,9 @@ Model Building:
 One of the simplest unsupervised learning models is the KMeans clustering algorithm. This algorithm initializes k centroids at random at then iteratively subdivides the dataset into “k” clusters around the initialized centroids. We ran our data on several values of k, ranging from 2 to 20, producing comparable results. We ran the KMeans Clustering algorithm on our datasets for values of k ranging from 2 to 9, achieving accuracies in the range 0.8 to 0.9.
 ![KMeans Results](/docs/assets/kmeans_results.png)
 
+### Gaussian Mixture Model - Unsupervised Learning
+A better performing unsupervised learning model is the Gaussian Mixture Model (GMM), since it provides more flexibility in clustering by outputting the probability of a datapoint belonging to a cluster rather than a hard clustering like KMeans. We used cross-validation to split our dataset into training and testing data, running 10 iterations where 9 batches were used for training and the last batch was used for testing. To our surprise, the GMM did not perform as well as our KMeans Clustering algorithm, performing at an accuracy of only 0.688. 
+
 ### Support Vector Machines - Supervised Learning
 The first supervised model we implemented to test on our datasets was SVM with linear, polynomial, RBF kernels. We chose to test this model first, as it is more computationally efficient and accurate on datasets with larger feature vectors. Indeed, the results followed this trend. As shown below, we received a mean accuracy of 0.877 across the three different kernels. Although this model produces fairly accurate results, we suspect there might be some issues of overfitting. For the final report, we aim to add cross validation and regularization (e.g. Lasso) of our dataset before running SVM and seeing if we can still achieve high accuracy amidst these conditions.
 
